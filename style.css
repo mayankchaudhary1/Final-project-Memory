@@ -1,0 +1,70 @@
+header,
+footer {
+  text-align: center;
+}
+
+.imageRow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2 2px;
+}
+
+.imageColumn {
+  flex: 25%;
+  max-width: 10%;
+  margin: 10px;
+  padding: 20;
+  border-style: solid;
+  border-color: red;
+  border-width: 2px;
+}
+
+.imageColumn img {
+  width: 100%;
+  opacity: 0;
+}
+
+.imageColumn img.flip {
+  animation-name: flip;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.imageColumn img.guessed {
+  animation-name: disable;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.imageRow.end {
+  position: absolute;
+  animation: end 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flip {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes disable {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes end {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 2000px;
+  }
+}
